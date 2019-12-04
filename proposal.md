@@ -1,2 +1,3 @@
 I take art commissions from various platforms. As of now, I keep track of these in a text file and sort them relatively arbitrarily. I also have to weigh the value of making such a tracker public so that my clients can track my progress against the privacy concerns this system raises.
+
 I would like to make a site on which I can track and organize my commissions. I could input commissions as I recieve them, and they could be automatically sorted based on time and complexity. I could give customers a code with which they could access their current/past orders, which allows them to check in without compromising the privacy of my other clients. If I have time, I could expand the site to include a portal through which customers could submit orders. 
