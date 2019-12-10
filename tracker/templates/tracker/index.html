@@ -1,0 +1,9 @@
+{% if active_commission_list %}
+    <ul>
+    {% for comm in active_commission_list %}
+        <li><a href="{% url 'tracker:commission detail' comm.id %}">{{ comm.commission_title }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No active commissions.</p>
+{% endif %}
