@@ -30,6 +30,7 @@ class ArchivedCommission(models.Model):
     commission_description = models.CharField(max_length=1000)
     creation_date = models.DateTimeField()
     completion_date = models.DateTimeField()
+    likes = models.IntegerField(default=0)
 
     def __str__(self):
         return self.commission_title

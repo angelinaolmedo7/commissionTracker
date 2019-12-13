@@ -1,3 +1,4 @@
+<h1>In-Progress</h1>
 {% if active_commission_list %}
     <ul>
     {% for comm in active_commission_list %}
@@ -6,4 +7,15 @@
     </ul>
 {% else %}
     <p>No active commissions.</p>
+{% endif %}
+
+<h1>Completed</h1>
+{% if archived_commission_list %}
+    <ul>
+    {% for comm in archived_commission_list %}
+        <li><a href="{% url 'tracker:archived commission detail' comm.id %}">{{ comm.commission_title }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No archived commissions.</p>
 {% endif %}
