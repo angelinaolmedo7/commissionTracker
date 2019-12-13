@@ -2,6 +2,7 @@
 <p>{{archived_commission.commission_description}}</p>
 
 
+<h2>Likes: {{archived_commission.likes}}</h2>
 <form action="{% url 'tracker:like' archived_commission.id %}" method="post">
 {% csrf_token %}
 <input type="submit" value="Like">
