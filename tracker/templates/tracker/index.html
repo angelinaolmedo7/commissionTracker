@@ -1,28 +1,34 @@
-{% load static %}
-<link href="{% static 'tellme/feedback.min.css' %}" rel="stylesheet">
-<h1>In-Progress</h1>
-{% if active_commission_list %}
-    <ul>
-    {% for comm in active_commission_list %}
-        <li><a href="{% url 'tracker:commission detail' comm.id %}">{{ comm.commission_title }}</a></li>
-    {% endfor %}
-    </ul>
-{% else %}
-    <p>No active commissions.</p>
-{% endif %}
+{% extends 'tracker/base.html' %}
 
-<h1>Completed</h1>
-{% if archived_commission_list %}
-    <ul>
-    {% for comm in archived_commission_list %}
-        <li><a href="{% url 'tracker:archived commission detail' comm.id %}">{{ comm.commission_title }}</a></li>
-    {% endfor %}
-    </ul>
-{% else %}
-    <p>No archived commissions.</p>
-{% endif %}
+{% block body %}
+<div class='row pt-5'>
+    <div class='col-sm-12'>
+        <h1>In-Progress</h1>
+    </div>
+    {% if active_commission_list %}
+        <ul>
+        {% for comm in active_commission_list %}
+            <li><a href="{% url 'tracker:commission detail' comm.id %}">{{ comm.commission_title }}</a></li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>No active commissions.</p>
+    {% endif %}
+</div>
 
-<button type="button" id="feedback-btn" class="btn btn-info vertical-right-aligned">
-    Feedback <span class="glyphicon glyphicon-bullhorn" aria-hidden="true"></span>
-</button>
-{%  include 'tellme/js_inc.html' %}
+<div class='row pt-5'>
+    <div class='col-sm-12'>
+        <h1>Completed</h1>
+    </div>
+    {% if archived_commission_list %}
+        <ul>
+        {% for comm in archived_commission_list %}
+            <li><a href="{% url 'tracker:archived commission detail' comm.id %}">{{ comm.commission_title }}</a></li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>No archived commissions.</p>
+    {% endif %}
+</div>
+
+{% endblock %}
