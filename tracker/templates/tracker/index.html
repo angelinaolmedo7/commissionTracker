@@ -1,3 +1,5 @@
+{% load static %}
+<link href="{% static 'tellme/feedback.min.css' %}" rel="stylesheet">
 <h1>In-Progress</h1>
 {% if active_commission_list %}
     <ul>
@@ -19,3 +21,8 @@
 {% else %}
     <p>No archived commissions.</p>
 {% endif %}
+
+<button type="button" id="feedback-btn" class="btn btn-info vertical-right-aligned">
+    Feedback <span class="glyphicon glyphicon-bullhorn" aria-hidden="true"></span>
+</button>
+{%  include 'tellme/js_inc.html' %}
