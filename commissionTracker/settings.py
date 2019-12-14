@@ -26,7 +26,7 @@ SECRET_KEY = '8e%odri&c-xzejj8vgz52bb+kjd2n4ml9t%c7_h*+wk2&pdd4!'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'commissionTracker.herokuapp.com']
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'commission-tracker-ao.herokuapp.com']
 SITE_ID = 1
 
 # Application definition
