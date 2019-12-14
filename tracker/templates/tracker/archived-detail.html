@@ -20,14 +20,14 @@
     <div class='col-sm-12 pt-5'>
         <strong>Likes: </strong>{{archived_commission.likes}}
     </div>
-    <div class='col-sm-12'>
+    <div class='col-sm-12 pb-5'>
         <form action="{% url 'tracker:like' archived_commission.id %}" method="post">
             {% csrf_token %}
             <input type="submit" value="Like">
         </form>
     </div>
 
-    <h2>Comments for {{ archived_commission.title }}:</h2>
+    <h2>Comments for {{ archived_commission.commission_title }}:</h2>
 
     {% render_comment_list for archived_commission %}
     {% render_comment_form for archived_commission %}
