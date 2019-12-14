@@ -1,2 +1,19 @@
-<h1>{{ commission.commission_title }}</h1>
-<p>{{commission.commission_description}}</p>
+{% extends 'tracker/base.html' %}
+{% block body %}
+
+<div class='row pt-5'>
+    <div class='col-sm-12'>
+        <h1>{{ commission.commission_title }}</h1>
+    </div>
+    <div class='col-sm-12'>
+        Commissioned by {{ commission.commissioner_name }} on {{ commission.commissioner_platform }}
+    </div>
+    <div class='col-sm-12'>
+        <strong>Created: </strong>{{ commission.creation_date }} | <strong>Complexity Rating: </strong>{{ commission.complexity_rating }}
+    </div>
+    <div class='col-sm-12 pt-5'>
+        <h3>{{ commission.commission_description }}</h3>
+    </div>
+</div>
+
+{% endblock %}

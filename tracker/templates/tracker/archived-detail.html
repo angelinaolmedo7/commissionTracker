@@ -1,14 +1,28 @@
 {% extends 'tracker/base.html' %}
 {% block body %}
 
-<h1>{{ archived_commission.commission_title }}</h1>
-<p>{{archived_commission.commission_description}}</p>
-
-
-<h2>Likes: {{archived_commission.likes}}</h2>
-<form action="{% url 'tracker:like' archived_commission.id %}" method="post">
-{% csrf_token %}
-<input type="submit" value="Like">
-</form>
+<div class='row pt-5'>
+    <div class='col-sm-12'>
+        <h1>{{ archived_commission.commission_title }}</h1>
+    </div>
+    <div class='col-sm-12'>
+        Commissioned by {{ archived_commission.commissioner_name }} on {{ archived_commission.commissioner_platform }}
+    </div>
+    <div class='col-sm-12'>
+        <strong>Created: </strong>{{ archived_commission.creation_date }} | <strong>Completed: </strong>{{ archived_commission.completion_date }}
+    </div>
+    <div class='col-sm-12 pt-5'>
+        <h3>{{ archived_commission.commission_description }}</h3>
+    </div>
+    <div class='col-sm-12 pt-5'>
+        <strong>Likes: </strong>{{archived_commission.likes}}
+    </div>
+    <div class='col-sm-12'>
+        <form action="{% url 'tracker:like' archived_commission.id %}" method="post">
+            {% csrf_token %}
+            <input type="submit" value="Like">
+        </form>
+    </div>
+</div>
 
 {% endblock %}
